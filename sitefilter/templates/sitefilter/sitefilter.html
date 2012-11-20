@@ -1,0 +1,6 @@
+{% if object_list %}
+    Limit content to
+    {% for object in object_list %}
+        <input type="checkbox" name="option1" value="Milk" {% if object in selected %}checked="" {% endif %}onclick="window.location.href = '{% url site_filter object.id %}';"> {{ object.name }}{% if forloop.last %}.{%endif %}
+    {% endfor %}
+{% endif %}
